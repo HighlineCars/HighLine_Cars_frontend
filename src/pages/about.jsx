@@ -81,12 +81,7 @@ const About = () => {
         </Link>
       </section>
 
-      {/* Footer Section */}
-      <footer className="bg-gray-800 text-center py-6 mt-12">
-        <p className="text-gray-300 text-sm">
-          &copy; 2024 Car Import Services. All Rights Reserved.
-        </p>
-      </footer>
+      
     </div>
   );
 };
