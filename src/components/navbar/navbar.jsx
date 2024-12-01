@@ -86,7 +86,7 @@ const Navbar = () => {
           </Link>
         ))}
         {/* Admin Button */}
-        <button
+{/*         <button
           className="px-8 py-2 text-4xl font-semibold border border-blue-500 rounded hover:bg-blue-500 hover:text-gray-900 transition-all duration-300"
           onClick={() => {
             setMbNav("hidden");
@@ -94,7 +94,7 @@ const Navbar = () => {
           }}
         >
           Admin
-        </button>
+        </button> */}
       </div>
     </div>
   );
