@@ -14,7 +14,7 @@ const MobileNav = ({ data }) => {
           <div className="flex flex-col items-center justify-center">
           {/* Profile Image */}
           <img
-            src="./dp.png"
+            src="./dp.jpg"
             className="rounded-full my-4 shadow-lg hover:scale-110 transition-transform duration-300"
             alt="Admin"
             style={{ height: "150px", width: "150px" }}
