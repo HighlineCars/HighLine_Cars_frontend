@@ -1,6 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_0iolawo', 'template_id7j0xj', form.current, 'kEFmi_3W_v3jDX1KZ')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          form.current.reset(); // Clear the form after success
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-gray-100 p-8">
       {/* Header Section */}
@@ -39,7 +58,7 @@ const Contact = () => {
           <p className="text-gray-300 text-lg mt-4">
             <strong>Phone:</strong>{" "}
             <a
-              href="tel:+35699940111"
+              href="tel:+1234567890"
               className="text-indigo-400 hover:underline"
             >
               +356 99940111
@@ -55,7 +74,7 @@ const Contact = () => {
           <h2 className="text-3xl font-bold text-indigo-500 mb-4">
             Get in Touch
           </h2>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -65,7 +84,6 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                id="name"
                 name="name"
                 className="w-full p-3 bg-gray-700 text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                 placeholder="Your Name"
@@ -81,7 +99,6 @@ const Contact = () => {
               </label>
               <input
                 type="email"
-                id="email"
                 name="email"
                 className="w-full p-3 bg-gray-700 text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                 placeholder="Your Email"
@@ -96,7 +113,6 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                id="message"
                 name="message"
                 rows="5"
                 className="w-full p-3 bg-gray-700 text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
