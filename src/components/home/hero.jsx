@@ -27,7 +27,7 @@ const Hero = () => {
         <div
           className="flex transition-transform duration-500 h-auto w-full"
           style={{
-            transform: translateX(-${currentIndex * 100}%),
+            transform: `translateX(-${currentIndex * 100}%)`,
           }}
         >
           {videos.map((video, index) => (
