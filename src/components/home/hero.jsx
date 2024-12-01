@@ -21,31 +21,34 @@ const Hero = () => {
   }, [videos.length]);
 
   return (
-    <div className="relative overflow-hidden w-full bg-gray-100 rounded-b-lg" style={{ zIndex: '-10' }}>
-      {/* Carousel Wrapper */}
-      <div
-        className="flex transition-transform duration-500 h-auto w-full"
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-        }}
-      >
-        {videos.map((video, index) => (
-          <div
-            key={index}
-            className="w-full flex-shrink-0 h-full flex items-center justify-center bg-black"
-          >
-            <video
-              src={video}
-              className="w-full h-full object-cover" 
-              muted
-              loop
-              autoPlay
-              preload="auto"
-            ></video>
-          </div>
-        ))}
+    <div className="bg-gray-900 -z-10">
+      <div className="relative overflow-hidden w-full bg-gray-100 rounded-b-lg" style={{ zIndex: '10' }}>
+        {/* Carousel Wrapper */}
+        <div
+          className="flex transition-transform duration-500 h-auto w-full"
+          style={{
+            transform: translateX(-${currentIndex * 100}%),
+          }}
+        >
+          {videos.map((video, index) => (
+            <div
+              key={index}
+              className="w-full flex-shrink-0 h-full flex items-center justify-center bg-black"
+            >
+              <video
+                src={video}
+                className="w-full h-full object-cover" 
+                muted
+                loop
+                autoPlay
+                preload="auto"
+              ></video>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+    
   );
 };
 
