@@ -42,6 +42,7 @@ const Hero = () => {
                 loop
                 autoPlay
                 preload="auto"
+                playsinline
               ></video>
             </div>
           ))}
