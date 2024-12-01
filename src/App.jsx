@@ -17,6 +17,7 @@ import ViewCarDetails from "./components/viewCarDetails/viewCarDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./store/auth";
+import ScrollToTop from "./ScrollToTop";
 const App = () => {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.auth.role);
@@ -32,10 +33,11 @@ const App = () => {
   }, []);
   return (
     <div>
-      {/* <Router> */}
+      <ScrollToTop/>
       <Navbar />
       <div className="w-100 bg-black" style={{height: "6.3rem"}}> </div>
       <Routes>
+
         <Route exact path="/" element={<Home />} />
         <Route path="/all-cars" element={<AllCars />} />
         <Route path="/profile" element={<Profile />}>
@@ -59,7 +61,7 @@ const App = () => {
         <Route path="/view-car-details/:id" element={<ViewCarDetails />} />
       </Routes>
       <Footer />
-      {/* </Router> */}
+
     </div>
   );
 };
