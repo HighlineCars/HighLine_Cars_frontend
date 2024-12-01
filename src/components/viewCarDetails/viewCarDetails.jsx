@@ -17,7 +17,7 @@ const viewCarDetails = () => {
   useEffect(() => {
     const fetch = async () => {
       const res = await axios.get(
-        `https://highline-cars-backend.onrender.com/api/v1/car/get-car-by-id/${id}`
+        'http://localhost:1000/api/v1/car/get-car-by-id/${id}'
       );
       setData(res.data.data);
     };
@@ -26,12 +26,12 @@ const viewCarDetails = () => {
 
   const headers = {
     id: localStorage.getItem("id"),
-    authorization: `Bearer ${localStorage.getItem("token")}`,
+    authorization: 'Bearer ${localStorage.getItem("token")}',
     carid: id,
   };
 
   const deleteCar = async () => {
-    const res = await axios.delete(`https://highline-cars-backend.onrender.com/api/v1/car/delete-car/`, {
+    const res = await axios.delete('http://localhost:1000/api/v1/car/delete-car/', {
       headers,
     });
     alert(res.data.message);
@@ -49,13 +49,13 @@ const viewCarDetails = () => {
               <img
                 src={data.carImage}
                 alt={data.name}
-                className="h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-lg transform transition duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-500"
+                className="h-auto  rounded-lg transform transition duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-500"
               />
               {/* Admin Actions */}
               {isLoggedIn === true && role === "admin" && (
                 <div className="absolute top-4 right-4 flex flex-col gap-4 z-10">
                   <Link
-                    to={`/update-car/${id}`}
+                    to={/update-car/${id}}
                     className="bg-indigo-600 text-white rounded-full text-3xl p-4 shadow-md hover:shadow-lg hover:shadow-indigo-400 transition-transform duration-300 hover:scale-110"
                   >
                     <FaEdit />
@@ -82,13 +82,13 @@ const viewCarDetails = () => {
               {[
                 { label: "Car Make", value: data.carMake },
                 { label: "Model", value: data.model },
-                { label: "Mileage", value: `${data.mileage} km` },
+                { label: "Mileage", value: ${data.mileage} km },
                 { label: "Import Type", value: data.importType },
                 { label: "Transmission", value: data.transmission },
                 { label: "Fuel", value: data.fuel },
                 { label: "Engine", value: data.engine },
                 { label: "Year", value: data.year },
-                { label: "Price", value: `€${data.price}` },
+                { label: "Price", value: €${data.price} },
               ].map((item, index) => (
                 <div
                   key={index}
