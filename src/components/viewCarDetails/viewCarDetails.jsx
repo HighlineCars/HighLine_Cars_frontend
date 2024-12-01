@@ -49,7 +49,7 @@ const viewCarDetails = () => {
               <img
                 src={data.carImage}
                 alt={data.name}
-                className="h-auto  rounded-lg transform transition duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-500"
+                className="h-auto w-full rounded-lg transform transition duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-blue-500"
               />
               {/* Admin Actions */}
               {isLoggedIn === true && role === "admin" && (
