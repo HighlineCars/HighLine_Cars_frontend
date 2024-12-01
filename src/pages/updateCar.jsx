@@ -60,7 +60,7 @@ const UpdateCar = () => {
     const fetch = async () => {
       try {
         const res = await axios.get(
-          `https://highline-cars-backend.onrender.com/api/v1/car/get-car-by-id/${id}`
+          `http://localhost:1000/api/v1/car/get-car-by-id/${id}`
         );
         setData(res.data.data);
       } catch (e) {
@@ -88,7 +88,7 @@ const UpdateCar = () => {
       }
 
       const res = await axios.put(
-        `https://highline-cars-backend.onrender.com/api/v1/car/update-car/${id}`,
+        `http://localhost:1000/api/v1/car/update-car/${id}`,
         data,
         { headers }
       );
@@ -119,8 +119,34 @@ const UpdateCar = () => {
             onChange={handleUploadPhoto}
           />
         </div>
-
         {/* Title and Price */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-gray-400 font-semibold mb-2">Car Title</label>
+            <input
+              type="text"
+              className="w-full p-3 bg-gray-700 text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              placeholder="Title of the Car"
+              name="name"
+              required
+              value={data.name}
+              onChange={change}
+            />
+          </div>
+          <div>
+            <label className="block text-gray-400 font-semibold mb-2">Price in €</label>
+            <input
+              type="number"
+              className="w-full p-3 bg-gray-700 text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              placeholder="Price"
+              name="price"
+              required
+              value={data.price}
+              onChange={change}
+            />
+          </div>
+        </div>
+        {/* Import Type and Car Make */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div>
             <label className="block text-gray-400 font-semibold mb-2">Import Type</label>
