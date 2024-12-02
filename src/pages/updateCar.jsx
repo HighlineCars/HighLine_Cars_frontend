@@ -88,7 +88,7 @@ const UpdateCar = () => {
       }
 
       const res = await axios.put(
-        `http://localhost:1000/api/v1/car/update-car/${id}`,
+        `https://highline-cars-backend.onrender.com/api/v1/car/update-car/${id}`,
         data,
         { headers }
       );
