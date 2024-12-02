@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const AddCar = () => {
-  const url = "https://api.cloudinary.com/v1_1/dpabvbttn/auto/upload";
+  const url = "https://api.cloudinary.com/v1_1/dg62kqlka/auto/upload";
 
   const uploadFile = async (file) => {
     const formData = new FormData();
