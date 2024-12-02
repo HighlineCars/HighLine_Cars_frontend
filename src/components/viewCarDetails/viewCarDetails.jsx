@@ -17,7 +17,7 @@ const viewCarDetails = () => {
   useEffect(() => {
     const fetch = async () => {
       const res = await axios.get(
-        `http://highline-cars-backend.onrender.com/api/v1/car/get-car-by-id/${id}`
+        `https://highline-cars-backend.onrender.com/api/v1/car/get-car-by-id/${id}`
       );
       setData(res.data.data);
     };
@@ -31,7 +31,7 @@ const viewCarDetails = () => {
   };
 
   const deleteCar = async () => {
-    const res = await axios.delete(`http://highline-cars-backend.onrender.com/api/v1/car/delete-car/`, {
+    const res = await axios.delete(`https://highline-cars-backend.onrender.com/api/v1/car/delete-car/`, {
       headers,
     });
     alert(res.data.message);
