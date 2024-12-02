@@ -6,7 +6,7 @@ const UpdateCar = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const url = "https://api.cloudinary.com/v1_1/dpabvbttn/auto/upload";
+  const url = "https://api.cloudinary.com/v1_1/dg62kqlka/auto/upload";
 
   // Function to handle image upload to Cloudinary
   const uploadFile = async (file) => {
