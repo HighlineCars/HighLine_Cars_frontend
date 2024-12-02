@@ -80,7 +80,7 @@ const Footer = () => {
             {/* Facebook */}
             <div className="group relative flex items-center">
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=61568081456646"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-gray-600 text-white rounded-full h-12 w-12 overflow-hidden transition-all duration-500 ease-in-out group-hover:w-40"
