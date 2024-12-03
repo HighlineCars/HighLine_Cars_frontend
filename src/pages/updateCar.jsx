@@ -23,6 +23,11 @@ const UpdateCar = () => {
 
   const handleUploadPhoto = async (e) => {
     const file = e.target.files[0];
+    if (file && file.type.startsWith('video/')) {
+      alert('Video files are not allowed.');
+      e.target.value = '';
+      return;  // Prevent uploading a video file
+    }
     const photo = await uploadFile(file);
     setData((prev) => ({
       ...prev,
