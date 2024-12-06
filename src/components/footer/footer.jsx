@@ -63,7 +63,7 @@ const Footer = () => {
             {/* LinkedIn */}
             <div className="group relative flex items-center">
               <a
-                href="www.linkedin.com/in/highline-cars-722671340"
+                href="https://www.linkedin.com/in/highline-cars-722671340/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-gray-600 text-white rounded-full h-12 w-12 overflow-hidden transition-all duration-500 ease-in-out group-hover:w-40"
